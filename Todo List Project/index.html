@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Todo List</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+<!--        google fonts: roboto added-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        
+<!--        adding fontawesome css file to the project -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/todos.css">
+        
+        <script type="text/javascript" src="assets/js/lib/jquery-3.3.1.min.js"></script>
+	</head>
+
+	<body>
+		
+<!--        the div contains the entire todo list with an h1, an input and a list of todos and delete buttons to delete each to-do -->
+        <div id="container">
+<!--            adding the fontawesome icon to the h1 -->
+            <h1>To-do List<i class="fa fa-plus"></i></h1>
+<!--            the placeholder attribute gives the input box a placeholder text that will go away once we start typing in there -->
+            <input type="text" placeholder="Add New Todo">
+            
+<!--            we create a bunch of li's and a span to hold the delete buttons -->
+            <ul>
+                <li><span><i class="fa fa-trash"></i></span> Go To Potions Class</li>
+                <li><span><i class="fa fa-trash"></i></span> Buy New Robe</li>
+                <li><span><i class="fa fa-trash"></i></span> Visit Hagrid</li>
+                <li><span><i class="fa fa-trash"></i></span> Talk To Hermione</li>
+                <li><span><i class="fa fa-trash"></i></span> Kill Voldemort</li>
+            </ul>
+        </div>
+        
+        
+        <script type="text/javascript" src="assets/js/todos.js"></script>
+	</body>
+
+</html>

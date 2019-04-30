@@ -1,0 +1,46 @@
+body {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    /*or we could do margin: 20px, auto - 20px is for the top */
+    border: 20px solid #bdc3c7;
+    padding: 20px;
+    /*max-width: 700px - if we had it then it sets the max width to 700px and it'll go down according to the margin % at other times. */
+}
+
+h2 {
+    color: #2c3e50;
+    padding-bottom: 10px;
+    /*paddingn for a longer distance between article titles and the paragraphs  */
+}
+
+h4 {
+    color: #3498db;
+    letter-spacing: 0.2rem;
+    /*rem means here the letters will be 20% more spaced out than regular*/
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+div {
+    padding-bottom: 20px;
+
+}
+
+p {
+    font-family: Source Sans Pro;
+
+}
+
+.lineMe {
+    border-left: 5px solid #bdc3c7;
+    padding-left: 5px;
+}
+
+/* for hr - Gradient transparent - color - transparent */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+

@@ -1,0 +1,14 @@
+{
+  "name": "expressexercise",
+  "version": "1.0.0",
+  "description": "this exercise tests both npm package uses and also routing parameters",
+  "main": "exercise.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nafee kazi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

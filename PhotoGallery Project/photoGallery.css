@@ -1,0 +1,31 @@
+img {
+/*  @width - is 30% which is relative and keeps 3 images in each row and will           change with browser size. 
+    @float: left - makes the images lie adjacent to each other instead of below     each other.
+    @margin: 1.66% - distributes the remaining 10% space almost evenly among the   images in each row. Note: each image has two sides on let and right and so   the 10% is divided into 6 parts here.
+    */
+    
+    width: 30%;
+    float: left;
+    margin: 1.66%;
+}
+
+p {
+/*  @font-family: Raleway - uses the raleway font gotten from googlefonts. 
+        margin-left: 1.66% - moves the paragraph to be in line with the photos.
+    @font-size: 23px - just increases the font size of the name.
+    @font-weight: 800 - makes the visibility of the name at maximum boldness.
+    @text-transform: uppercase - convers all teh letters in the paragraph/name to    uppercase.
+    @border-bottom: 2px solid light-grayish - creates the grayish line below the     name.
+    @width: 30% - sets the distance of the width across.
+    @padding-bottom: 20px - creates the distance between the name and the grayish line.
+    */
+    
+    font-family: Raleway;
+    margin-left: 1.66%;
+    font-size: 23px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,85 @@
+body {
+    background: #f5d9d5;
+    /* the font family is from googlefonts.com */
+    font-family: "Nunito", sans-serif;
+}
+
+/* set the color, font-weight to reduce thickness and the size of h2 within class blurb */
+.blurb h2 {
+   color: #EA1C2C;
+   font-weight: 100;
+   font-size: 2.5rem;
+}
+
+/* modifying the texts of each of the texts by the images with class name blurb */
+.blurb p {
+    color: #f498b8; /* gives the texts the light pinkish color */
+    font-weight: 100; /* reduces the thickness of the font of the text in p */
+    font-size: 1.125rem; /* makes the texts smaller; 1rem = 16px */
+    line-height: 2; /* makes the lines more condensed ie the lines are closer to each other */
+}
+
+/* used to change the margin at the top and bottom for space of the pictures and text */
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* makes changes to the entire navbar as it has the id mainNavBar */
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;    
+}
+
+/* changing the color of all the other links on the navbar (header) */
+#mainNavbar .nav-link {
+    color: white;
+}
+
+/* changes the color of all the other links to this when the mouse is hovering over it */
+#mainNavbar .nav-link:hover {
+    color: #EA1C2C;
+}
+
+/* changes the styke of the website (main) name: CANDY */
+#mainNavbar .navbar-brand {
+    color: #EA1C2C;
+    font-size: 1.5rem;
+}
+
+/* changing the color of the contents inside the spans in hte class heading group */
+#headingGroup span {
+    color: #EA1C2C;
+}
+
+/* changing font weight to 100 which makes it lighter */
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem; /* it means 16px = 1rem */
+}
+
+/* changing background color when the page is scrolled down and
+    and transition is to transition the color change slower */
+.navbar.scrolled {
+    background: rgb(222,192,222);
+    transition: background 500ms; /*when the background changes then do this*/
+}
+
+/* media query: It uses the @media rule to include a block of CSS 
+    properties only if a certain condition is true  */
+
+    /* we use to changew the rem of the h2's so the first image doesn't block part of the 
+        h2's when we shrink the browser */
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+    .blurb h2 {
+        font-size: 2rem;
+    }
+}
+
+
+
+

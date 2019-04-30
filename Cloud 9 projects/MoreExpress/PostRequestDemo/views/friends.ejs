@@ -1,0 +1,15 @@
+<h1>Friends List Goes Here</h1>
+
+<!--making a for each loop to list all the friends here -->
+<% friends.forEach(function(friend){ %>
+    <li><%= friend %></li>
+<% }); %>
+
+
+<!--creating the form to add more friends -->
+<!--it has to have two attributes: action which will be the name of the page we're going to/using to send post and method which is post type -->
+<form action="/addfriend" method="POST">
+    <!--the name attribute will store the body of the input and we'll use this to add new person to the list -->
+    <input type="text" name="newFriend" placeholder="name">
+    <button>Add new friend!</button>
+</form>

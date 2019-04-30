@@ -1,0 +1,108 @@
+body {
+    background-color: #232323;
+/*    no margin on any side of the body; this stretches everything all the way on all sides */
+    margin: 0;
+/*    changing font to montserrat or avenir because it may be that we don't have one or the other supported*/
+    font-family: "Montserrat", "Avenir";
+}
+
+
+/*float arranges boxes in a horizontal line rather than a vertical one and margin gives spaces between them */
+.square {
+/*    width of the squares, each being 30% of the container; background color is purple; float left to keep them in one line and with margin of 1.66% on each side it becomes 100% so 3 can fit in one line. finally padding bottom gives them 30% space between its content (ie words, images etc inside) and its border (the border line of the div) */
+    
+/*    border radius gives the elements a rounder shape so 50% sould give an oval, 100% a circle */
+    border-radius: 15%;
+/*    we want the background color to change in 0.6 seconds and not instantly. we also add the transition property for firefox and wbkit since the generic one isn't supported by every browser */
+    transition: background 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    width: 30%;
+    background-color: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%
+}
+
+#container {
+/*    20px auto: here 20 px on the top and bottom and auto is for requal on the left and right with a maximum width of the whole parent div to be 600px */
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+h1 {
+/*    allign the h1 text in the center*/
+    text-align: center;
+/*    line-height 1.1 shrinks it down from what it was to reduce space on the top and bottom of the lines in h1 */
+    line-height: 1.1;
+/*    usually h1's have 700, 800 font weights to make them look big */
+    font-weight: normal;
+    color: white;
+    background-color: steelblue;
+/*    no margin on any side of h1*/
+    margin: 0;
+/*    make everything uppercase*/
+    text-transform: uppercase;
+/*    adding some padding on the top and bottom to give some free space between lines at the top and bottom of the h1 */
+    padding: 20px 0;
+}
+
+/*affects the span with id colorDisplay */
+#colorDisplay {
+/*    means the font size of this is 200% of its parent ie h1's font size */
+    font-size: 200%;
+}
+
+/*affects all buttons */
+button {
+/*    removes all visible border and background inside the border for the buttons */
+    border: none;
+    background: none;
+    text-transform: uppercase;
+/*    have the buttons stretch the entire height of the div they are in */
+    height: 100%;
+/*    making the letters more bolder/thicker */
+    font-weight: 700;
+    color: steelblue;
+/*    change the spacing between each letter to make the words wider */
+    letter-spacing: 1px;
+/*    make these inherit the font size of colordisplay */
+    font-size: inherit;
+/*  this property tells css to have an animating effect: here it means, any time a property changes on any button which is color and background-color as is written in button:hover it should take 0.3 seconds to go in and out of the change  */
+    transition: all 0.3s;
+/*    removes the blue outline around the buttons that the browser creates when we click a button*/
+    outline: none;
+}
+
+/*change the hover colors of the buttons and their background */
+button:hover {
+    color: white;
+    background-color: steelblue;
+}
+
+/*make the span feedback message take up 20% of the width of the line even when it's not visible to seperate new color and easy/hard buttons */
+#message {
+    display: inline-block;
+    width: 20%;
+}
+
+/* No need for this because the span inside div will inherit it's parent's color which is stripe and the background color there is already white. Same goes for the span inside parent tag h1
+
+span {
+    color: white;
+}
+*/
+
+/*changes the div stripe that holds the play button and correct/try again messages*/
+#stripe {
+    background-color: white;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+/*class to keep the easy and hard button the same color as the h1 background color*/
+.selected {
+    color: white;
+    background-color: steelblue;
+}

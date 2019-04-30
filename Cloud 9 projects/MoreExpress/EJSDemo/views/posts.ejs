@@ -1,0 +1,25 @@
+<!--adding header.ejs here -->
+<% include partials/header %>
+
+
+<h1>The Posts Page</h1>
+
+
+<!--Loop through for the number of posts in the js file and show the posts in a ul -->
+<% for(var i = 0; i < posts.length; i++){ %>
+<!--use ejs html code tag to post the titles and authors of the ul here; using the first kind of tag because we won't change the contents so not dynamic -->
+    <!--encasing the authors in a strong tag which is around the ejs tags because strong tag is html while the authors are js -->
+    <li>
+        <%=posts[i].title %> - <strong><%=posts[i].author%></strong>
+    </li>
+<% } %>
+
+<!--we can also use a foreach loop to do this in which case we won't need to use the i and we can just call it 'post' in the function -->
+<% posts.forEach(function(post){ %>
+<li>
+    <%=post.title %> - <strong><%=post.author%></strong>
+</li>
+<% });%>
+
+<!--adding footer.ejs here -->
+<% include partials/footer %>

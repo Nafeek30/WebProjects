@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Color Game</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="colorGame.css">
+	</head>
+
+	<body>
+        
+<!--        the br tag makes the lines be seperated -->
+        <h1>
+            The Great 
+            <br>
+            <span id="colorDisplay">RBG</span> 
+            <br>
+            Color Game
+        </h1>
+        
+        
+<!--        Holds the white the stripe line that contains play button and guess feedback-->
+        <div id="stripe">
+            <button id="reset">New Colors</button>
+<!--         Initially the span doesn't have any message; it changes as player guesses colors-->
+            <span id="message"></span>
+<!--             class mode is used to toggle between showing 3 and 6 squares depending on which button is clicked. NOTE: Hard button has 2 classes and they just need to be seperated by a space -->
+            <button class="mode">Easy</button>
+            <button class="mode selected">Hard</button>
+        </div>
+        
+        
+<!--        a div to hold all the squares in-->
+        <div id="container">
+<!--            the 6 squares are the 6 divs here-->
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+        
+        
+		<script type="text/javascript" src="colorGame.js"></script>
+	</body>
+
+</html>

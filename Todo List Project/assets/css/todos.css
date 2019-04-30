@@ -1,0 +1,112 @@
+/*ORGANIZE CSS BY SPECIFICITY SO - BODY - ELEMENT TAGS IN BODY - CLASS - ID*/
+
+
+/*applying roboto font to everything in the body and also the background from uigradient.com */
+body {
+    font-family: Roboto;
+    background: #833ab4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+h1 {
+    /*    no margin so takes up entire h1; lowering font size and making the text normal from default bold in h1 */
+    background-color: #2980b9;
+    color: white;
+    margin: 0; 
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+
+ul {
+    /*    get rid of bullet points from the list with list-style: none; and remove margin and padding */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*setting background of every li to white and giving them a height of 40px to increase the height of each line and use line-height to set the words in the middle(?)  */
+li {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+}
+
+
+/*stype the spans for the trash can icon */
+span {
+/*    setting the background color to red; height to 40 px to match the letters; margin to teh right to give them some room; alligning the icons to the center with text-align; and setting the trash can color to white; setting initial width to 0; and displaying them as a block inline; makign the trash can transition in 0.2 seconds in a linear path; changing the opacity to 0 so the icon doesn't show after the hover is moved to elsewhere */
+    background-color: #e74c3c;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    width: 0;
+    display: inline-block;
+    transition: 0.2s linear;
+    opacity: 0;
+}
+
+
+/*styling the input element */
+input {
+    /*  making the font inside the input tag bigger; setting background color to gray; have it take up 100% of the width of it's line; making padding; box-sizing takes into account the border and padding but not the margin so use it to fix the input going out of line with the line at the end; and border is set so the input is inline(if you look really closely) before being selected but it will be invisible ie we cant see the border because no need to  */
+    font-size: 18px;
+    background-color: #f7f7f7;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, 0,);
+}
+
+/*input:focus means when we click into the input box thus it is being focused */
+input:focus{
+    /*  setting background to white, creating a blue border and getting rid of the blue outline the browser creates when focused  */
+    background-color: #fff;
+    border: 3px solid #2980b9;
+    outline: none;
+}
+
+
+/*setting every second li to have gray background */
+li:nth-child(2n){
+    background-color: #f7f7f7;
+}
+
+
+/*when hovering over an li we show the trash can icon */
+li:hover span {
+    width: 40px;
+    opacity: 1.0;
+/*    setting the width to 40px to show it when being hovered over a line and changing opacity back to 1 again here */
+}
+
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+
+/*font awesome icon to the right */
+.fa-plus {
+    float: right;
+}
+
+
+#container {
+    /*    border shows us the dimension of the div, width tells how wide the div will be, margin is set to fit right in the middle of the page with 100x on top and bottom meaning the contents inside will be 100px away from the the top and bottom of teh border */
+
+    width: 360px;
+    margin: 100px auto;
+    background-color: #f7f7f7;
+    /*    no need for border as this will suffice */
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
