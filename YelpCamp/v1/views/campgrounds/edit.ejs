@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+<!--addinng two divs. first onne to center it more annd shirnk it; second one to use css in it to design and further shrink it; using margin to give some space between h1 and inputs -->
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Edit <%= campground.name %></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <!--creating a form that will take in a campground name and image url and add it to the campgroud list in /campgrounds -->
+            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+                <!--adding some spacing between each field-->
+                <div class="form-group">
+                <!--making the button larger with bootstrap and having a class for the inputs to control them -->
+                <input class="form-control" type="text" name="campground[name]" value="<%= campground.name %>">
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="campground[image]" value="<%= campground.image %>">
+                </div>
+                <!--description is used to get the the description in app.post("/campgrounds")-->
+                <div class="form-group">
+                <input class="form-control" type="text" name="campground[decription]" value="<%= campground.description %>">
+                </div>
+                <div class="form-group">
+                <!--the block attribute makes the button take up the entire width of the container it's inside; btn-default is grayish white; primary is lue-->
+                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <!--go back button to the campgrounds pag-->
+            <a href="/campgrounds">Go Back</a>
+        </div>   
+    </div>
+</div>
+<% include ../partials/footer %>

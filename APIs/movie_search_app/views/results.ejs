@@ -1,0 +1,14 @@
+<h1>This is the results page!</h1>
+
+
+<!--movie is data[search]; for each data search array element we display it's title so no need for [0] because we're not getting just the first one -->
+<ul>
+    <% data["Search"].forEach(function(movie){ %>
+        <li>
+            <em><%= movie["Title"] %></em> - <%=movie["Year"]%>
+        </li>
+    <% }); %>
+</ul>
+
+<!--adding a back button-->
+<a href="/">Search Again</a>

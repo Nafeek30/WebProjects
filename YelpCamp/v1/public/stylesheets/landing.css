@@ -1,0 +1,56 @@
+/*change background color to black */
+body {
+  background-color: #000;
+}
+
+/* position welcome text and view all campgrounds button */
+#landing-header {
+    /*s and y are left and right, up and down; z is forward and backward; ie it'll make it look behind or infront of something else on the page */
+    /*z-index of 1 makes it look forward and it will layer over anything that has a z index of less than 1. we have to change position from static to 
+    anything else to use z index so we use relative. NOTE: static will ignore the z index */
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  /*setting the view height to 40 to make the contents centered top to bottom. 50vh will drop the contents below halfway */
+  padding-top: 40vh;
+}
+
+/*cahnge the h1 color to white so we can see the welcome text better and it's white and visible */
+#landing-header h1 {
+  color: #fff;
+}
+
+
+/*styling the unordered list */
+/*    1. the first three attributes will make the slideshow images take up the entire page;
+    2. then we nudge it up to the top-left corner of the page by setting top and left to 0;
+    3. then we set the z-index to 0 to make sure the background images are behind the other content
+    4. then we set the list-style to 0 to make sure hte bullets of the bullet points aren't showing 
+    5. we remove all margin and padding */
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*styling each individual list items */
+/**/
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+             <!--adding the navbar in the header file so all files with the header partial will have the navbar -->
+     <nav class="navbar navbar-default">
+         <!--creating a div class to contain everything inside the navbar here -->
+         <div class="container-fluid">
+             <!--creating a div for the brand name of the website and linking it to the homepage-->
+             <div class="navbar-header">
+                 <a class="navbar-brand" href="/">YelpCamp</a>
+             </div>
+             <!--this div will contain the login and sign in stuff which can collapse a list of options (using bootstrap stuff)-->
+             <div class="collapse navbar-collapse">
+                 <!--this sets it to the right -->
+                 <ul class="nav navbar-nav navbar-right">
+                    <% if(!currentUser){ %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                    <% } else { %>
+                        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                        <li><a href="/logout">Logout</a></li>
+                     <%   } %>
+                 </ul>
+             </div>
+         </div>
+     </nav>
+     
+     <!--Adding flash messages for success and errors -->
+     <div class="container">
+         <% if(error && error.length > 0) { %>
+         <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } %>
+        <% if(success && success.length > 0) { %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+        <% } %>
+     </div>
+     

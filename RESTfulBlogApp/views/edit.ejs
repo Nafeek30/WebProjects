@@ -1,0 +1,25 @@
+<!--EDIT = this is the form page to edit an already existing blog post-->
+
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= blog.title %></div>
+    <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST"> <!-- method must be put type because update route is app.put; action must be update's url so include the id with js-->
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="blog[title]" value="<%= blog.title %>"> <!-- value fills the input field with whatever is in its " " -->
+        </div>
+        <div class="field">
+            <label>Image</label>
+            <input type="text" name="blog[image]" value="<%= blog.image %>">
+        </div>
+        <div class="field">
+            <label>Blog Content</label>
+            <textarea required name="blog[body]"><%= blog.body %></textarea>
+        </div>
+        <input class="ui violet big basic button" type="submit">
+    </form>
+</div>
+
+
+
+<% include ./partials/footer %>

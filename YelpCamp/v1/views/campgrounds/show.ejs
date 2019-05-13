@@ -1,0 +1,88 @@
+ <!--This is the show route/page - ie it shows one campgorund (that was clicked on) -->
+ <% include ../partials/header %>
+
+
+<!--putting the entire campgrounds stuff in a container -->
+<div class="container">
+    <div class="row">
+     <!--3/12 grid space for the list and the map -->
+        <div class="col-md-3">
+             <p class="lead">YelpCamp</p> 
+             <!-- To add the list items -->
+             <div class="list-group">
+                 <li class="list-group-item active">1</li>
+                 <li class="list-group-item">2</li>
+                 <li class="list-group-item">3</li>
+             </div>
+             Map will go here
+        </div>
+        <!--9/12 grid space for the campground stuff-->
+        <div class="col-md-9">
+            <div class="thumbnail">
+             
+                <!--Its image-->
+                <img class="img-responsive" src="<%= campground.image %>">
+                <div class="caption-full">
+                   <h4 class="pull-right">$9.00/night</h4>
+                   <h4><a><%=campground.name%></a></h4>
+                   <!--Its description-->
+                   <p><%= campground.description %></p>
+                   <!--It was created by -->
+                    <p>
+                       <em>Submitted By <%= campground.author.username %></em>
+                    </p>
+                    <!--we get current user from app.js where we declared current user and make it available to every route -->
+                    <!--so if there is a current user and that user is the same as campground owner then show edit and delete buttons-->
+                    <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                    <a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit Campground</a>
+                    <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-xs btn-danger">Delete</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+            <!--After the thumbnail box around the image; add the comments section -->
+            <div class="well">
+                <div class="text-right">
+                    <!--Adding a button to add a new comment -->
+                      <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+                </div>
+                <!--give a small faint line in between the new comment button and the comments -->
+                <hr>
+                <!--Its comments -->
+                <% campground.comments.forEach(function(comment){ %>
+                <!--putting each comment in its own row -->
+                   <div class="row">
+                       <div class="col-md-12">
+                          <strong><%= comment.author.username %></strong>
+                          <span class="pull-right">10 days ago</span>
+                          <p>
+                             <%= comment.text %>
+                          </p>
+                          <!--we get current user from app.js where we declared current user and make it available to every route -->
+                        <!--so if there is a current user and that user is the same as comment owner then show edit and delete buttons-->
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                          <!--edit comment button -->
+                          <a class="btn btn-xs btn-warning" 
+                          href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit Comment</a>
+                          
+                          <!--delete comment button -->
+                        <form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+                        <% } %>
+                       </div>
+                   </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--The campground name that was clicked on for more info -->
+<h1><%=campground.name%></h1>
+
+
+
+<% include ../partials/footer %>

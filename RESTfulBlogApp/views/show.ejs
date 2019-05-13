@@ -1,0 +1,30 @@
+<!--Page that shows more info on one blog post: the blog post to show is based off of the one the user clicks -->
+
+<% include ./partials/header %>
+
+<div class="ui main text container segment"> <!--segment creates a border around its contents -->
+    <div class="ui huge header"><%= blog.title %></div> <!--makes the header huge "the blog title will look huge -->
+    <div class="ui top attached"> 
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image %>" >
+            <div class="content">
+                <span><%= blog.created.toDateString() %></span>
+            </div>
+            <div class="description">
+                <p><%= blog.body%></p>
+            </div>
+            
+            <!--Edit button to edit this post-->
+            <a class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+            
+            <!--Delete button to delete a post-->
+            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

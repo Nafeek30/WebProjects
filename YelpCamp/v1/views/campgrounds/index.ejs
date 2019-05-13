@@ -1,0 +1,49 @@
+ <!--This is the index route/page - ie it shows all the campgorund-->
+ <% include ../partials/header %>
+ 
+
+<!--header tag fuctions just like a div but it has more of a sematic meaning to it -->
+<!--Adding a class of jumbotron and moving the h1 in there; then create a div and put everything inside it -->
+<div class="container">
+    <header class="jumbotron">
+        <!--the div below is to avoid the stuff below to hit the previous div wall when the browser window is shrunk/resized -->
+        <div class="container">
+            <h1>Welcome to YelpCamp</h1>
+            <p>View our hand-picked campgrounds from all over the world</p>
+            
+            <!--link to new campground and put it in a paragraph tag for spacing and having it in its own line-->
+            <p>
+                <!--give the button a class of btn-lg and a primary color-->
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New campground</a>
+            </p>
+        </div>
+    </header>
+    
+    <!--creating the grid to show camps in horizontally in a grid -->
+    <!--the lie below sets the text caption texts to center and the style makes images auto adjust to be in the same line eve if sizes are different(ie taller or wider)-->
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <!--looping through the campgrounds array and adding the name and image inside a div; the names will be larger in h4 tags and the images are below them-->
+        <!--NOTE: when the images will be selected the ejs tags will remove the the double quotes around them but we want them in there because we need them-->
+        <!--for the html to turn them into images so we add duble quotes and then put the campground.name inside it-->
+        <% campgrounds.forEach(function(campground){ %>
+        <!--setting the size each img should take when browser is resized; NOTE: extra small not specified because it auto sets it to take 12 spaces-->
+        <!--we specified the other sizes so it doesn't auto set everything to take up 12 spaces; -->
+            <div class="col-md-3 col-sm-6">
+                <!--putting the images ad caption in a div and then putting the caption in another div for spacing -->
+                <div class="thumbnail">
+                    <img src="<%= campground.image %>">
+                    <div class="caption">
+                        <h4><%= campground.name %></h4>
+                    </div>
+                    <p>
+                        <!--Adding the more info button for each campground to take to the info page of that campground-->
+                        <!--NOTE: HAVE MONGOD RUNNING OR STUFF FROM DB WON'T LOAD AND PAGE WON'T LOAD-->
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

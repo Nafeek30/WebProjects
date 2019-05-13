@@ -1,0 +1,19 @@
+/*select all images inside thumbnail class (it's a class in bootsrap) and make them take up full width */
+.thumbnail img {
+    width: 100%;
+}
+
+/*change the padding of the thumbnail so its contents (the image) takes up all of its space */
+.thumbnail {
+    padding: 0;
+}
+
+/*give the texts inside the thumbnail a padding of 9px */
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+/*set the delete button into the show.ejs page to be inline with the edit button */
+.delete-form {
+    display: inline;
+}
